@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Marks Portal</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
+</style>
+</head>
+
+<body>
+
+
+<!-- LOGIN -->
+<div id="loginPage" class="page">
+
+<div class="login-box">
+
+<h2>Student Marks Portal</h2>
+
+<form id="loginForm">
+
+<input id="username" placeholder="Username" required>
+
+<input id="password" type="password" placeholder="Password" required>
+
+<button>Login</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+
+<!-- STUDENT LIST -->
+<div id="studentListPage" class="page hidden">
+<nav>
+<img src="images/Picsart_26-03-07_21-53-40-430.png" alt="College Logo" class="logo" height="200px" width="150px">
+
+
+<h1>COMPUTER SCIENCE AND ENGINEERING</h1>
+<h2>III CSE A STUDENTS MARKS PORTAL</h2>
+</nav>
+
+
+<button id="goMarks">Proceed to Marks Entry</button>
+</div>
+
+
+<!-- MARK ENTRY -->
+<div id="marksEntryPage" class="page hidden">
+
+<h2>Enter Assignment & MCQ Marks</h2>
+<nav>
+<h2>Student List</h2>
+<img src="images/Picsart_26-03-07_21-53-40-430.png" class="logo" height="200px" width="150px">
+
+</nav>
+
+
+<select id="entrySubject" style="font-size: 25px; margin-top: 15px;"></select>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>A1</th>
+<th>A2</th>
+<th>MCQ1</th>
+<th>MCQ2</th>
+</tr>
+</thead>
+
+<tbody id="entryBody"></tbody>
+
+</table>
+
+<button id="toPortal">Proceed to Portal</button>
+
+</div>
+
+
+
+<!-- PORTAL -->
+<div id="portalPage" class="page hidden">
+
+<h2>STUDENT MARKS PORTAL</h2>
+
+<select id="subjectSelect" style="font-size: 25px; margin-top: 15px;"  ></select>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>IAT</th>
+<th>IAT 60%</th>
+<th>A1</th>
+<th>A2</th>
+<th>MCQ1</th>
+<th>MCQ2</th>
+<th>Boost</th>
+<th>Total</th>
+<th>Grade</th>
+</tr>
+</thead>
+
+<tbody id="portalBody"></tbody>
+
+</table>
+
+
+<div class="stats">
+
+<p id="avg"></p>
+<p id="pass"></p>
+<p id="fail"></p>
+
+</div>
+
+<div class="charts">
+
+<div class="chart-container">
+  <canvas id="barChartCanvas"></canvas>
+</div>
+<div class="chart-container">
+  <canvas id="pieChartCanvas"></canvas>
+</div>
+<button id="downloadPdf">Download PDF</button>
+<button id="downloadExcel">Download Excel</button>
+<button id="backToEntry">Back</button>
+
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
